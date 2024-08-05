@@ -75,42 +75,42 @@
 
     macros {
         lc: lcontrol_hrm {
-            compatible = "zmk,behavior-macro"
+            compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
             bindings = <&macro_param_1to2>, <&hrm LCTRL MACRO_PLACEHOLDER>;
         };
         la: lalt_hrm {
-            compatible = "zmk,behavior-macro"
+            compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
             bindings = <&macro_param_1to2>, <&hrm LALT MACRO_PLACEHOLDER>;
         };
         lm: lmeta_hrm {
-            compatible = "zmk,behavior-macro"
+            compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
             bindings = <&macro_param_1to2>, <&hrm LMETA MACRO_PLACEHOLDER>;
         };
         ls: lshift_hrm {
-            compatible = "zmk,behavior-macro"
+            compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
             bindings = <&macro_param_1to2>, <&hrm LSHFT MACRO_PLACEHOLDER>;
         };
         rc: lcontrol_hrm {
-            compatible = "zmk,behavior-macro"
+            compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
             bindings = <&macro_param_1to2>, <&hrm RCTRL MACRO_PLACEHOLDER>;
         };
         ra: lalt_hrm {
-            compatible = "zmk,behavior-macro"
+            compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
             bindings = <&macro_param_1to2>, <&hrm RALT MACRO_PLACEHOLDER>;
         };
         rm: lmeta_hrm {
-            compatible = "zmk,behavior-macro"
+            compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
             bindings = <&macro_param_1to2>, <&hrm RMETA MACRO_PLACEHOLDER>;
         };
         rs: lshift_hrm {
-            compatible = "zmk,behavior-macro"
+            compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
             bindings = <&macro_param_1to2>, <&hrm RSHFT MACRO_PLACEHOLDER>;
         };
