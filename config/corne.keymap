@@ -38,28 +38,28 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <TAP_DANCE_MS>;
-            bindings = <&ls NUM_L NUM_L>, <&to NUM_L>
+            bindings = <&ls NUM_L NUM_L>, <&to NUM_L>;
         };
 
         sym: symbol_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <TAP_DANCE_MS>;
-            bindings = <&ls SYM_L SYM_L>, <&to SYM_L>
+            bindings = <&ls SYM_L SYM_L>, <&to SYM_L>;
         };
 
         nav: nav_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <TAP_DANCE_MS>;
-            bindings = <&ls NAV_L NAV_L>, <&to NAV_L>
+            bindings = <&ls NAV_L NAV_L>, <&to NAV_L>;
         };
 
         fun: fun_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <TAP_DANCE_MS>;
-            bindings = <&ls FUN_L FUN_L>, <&to FUN_L>
+            bindings = <&ls FUN_L FUN_L>, <&to FUN_L>;
         };
 
         hrm: home_row_mod {
