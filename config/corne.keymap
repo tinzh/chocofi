@@ -1,56 +1,170 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define MACRO_PLACEHOLDER 0
+
+// variables
+#define HOLD_MS       1000 // time after which hold action is activated
+#define QUICK_TAP_MS  150 // time between double-taps that always triggers tap behavior
+#define PRIOR_IDLE_MS 100 // time since last non-modifier that disables modifiers
+#define TAP_DANCE_MS  1000 // max time between tap-dance taps
+
+// layers
+#define BS_L  0
+#define NUM_L 1
+#define SYM_L 2
+#define NAV_L 3
+#define FUN_L 4
+
+// redefines
+#define BRIUP C_BRI_UP
+#define BRIDN C_BRI_DN
+#define VOLUP C_VOL_UP
+#define VOLDN C_VOL_DN
+#define VMUTE C_MUTE
+
 / {
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
-
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
+    behaviors {
+        ls: layer_sticky {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <HOLD_MS>;
+            bindings = <&sl>, <&mo>;
         };
+
+        num: num_layer {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <TAP_DANCE_MS>;
+            bindings = <&ls NUM_L NUM_L>, <&to NUM_L>
+        };
+
+        sym: symbol_layer {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <TAP_DANCE_MS>;
+            bindings = <&ls SYM_L SYM_L>, <&to SYM_L>
+        };
+
+        nav: nav_layer {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <TAP_DANCE_MS>;
+            bindings = <&ls NAV_L NAV_L>, <&to NAV_L>
+        };
+
+        fun: fun_layer {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <TAP_DANCE_MS>;
+            bindings = <&ls FUN_L FUN_L>, <&to FUN_L>
+        };
+
+        hrm: home_row_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <HOLD_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <PRIOR_IDLE_MS>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    macros {
+        lc: lcontrol_hrm {
+            compatible = "zmk,behavior-macro"
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to2>, <&hrm LCTRL MACRO_PLACEHOLDER>;
+        };
+        la: lalt_hrm {
+            compatible = "zmk,behavior-macro"
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to2>, <&hrm LALT MACRO_PLACEHOLDER>;
+        };
+        lm: lmeta_hrm {
+            compatible = "zmk,behavior-macro"
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to2>, <&hrm LMETA MACRO_PLACEHOLDER>;
+        };
+        ls: lshift_hrm {
+            compatible = "zmk,behavior-macro"
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to2>, <&hrm LSHFT MACRO_PLACEHOLDER>;
+        };
+        rc: lcontrol_hrm {
+            compatible = "zmk,behavior-macro"
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to2>, <&hrm RCTRL MACRO_PLACEHOLDER>;
+        };
+        ra: lalt_hrm {
+            compatible = "zmk,behavior-macro"
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to2>, <&hrm RALT MACRO_PLACEHOLDER>;
+        };
+        rm: lmeta_hrm {
+            compatible = "zmk,behavior-macro"
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to2>, <&hrm RMETA MACRO_PLACEHOLDER>;
+        };
+        rs: lshift_hrm {
+            compatible = "zmk,behavior-macro"
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to2>, <&hrm RSHFT MACRO_PLACEHOLDER>;
+        };
+    };
+
+
+    keymap {
+        // view with tabstop=10
+
+        compatible = "zmk,keymap";
+
+        base_layer {
+            bindings = <
+	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI
+	&lc A	&la R	&lm S	&ls T	&kp G		&kp M	&rs N	&rm E	&ra I	&rc O
+	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH
+			&kp BSPC	&kp SPACE	&nav 		&kp RET	&sym	&num
+            >;
+        };
+
+        num_layer {
+            bindings = <
+	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI
+	&lc N1	&la N2	&lm N3	&ls N4	&kp N5		&kp N6	&rs N7	&rm N8	&ra N9	&rc N0
+	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH
+			&trans	&to BS_L	&trans		&trans	&trans	&trans
+            >;
+        };
+
+        symbol_layer {
+            bindings = <
+	&kp SQT	&kp LT 	&kp GT	&kp DQT	&trans		&kp DLLR	&kp UNDER	&kp LBKT	&kp RBKT	&kp PRCNT
+	&lc EXCL	&la MINUS	&lm PLUS	&ls EQUAL	&kp POUND		&kp AMPS	&rs COLON	&rm LPAR	&ra RPAR	&rc QMARK
+	&kp CARET	&kp FSLH	&kp STAR	&kp D	&kp GRAVE		&kp PIPE	&kp TILDE	&kp LBRC	&kp RBRC	&kp AT
+			&trans	&to BS_L	&trans		&trans	&trans	&trans
+            >;
+        };
+
+        nav_layer {
+            bindings = <
+	&trans	&kp VOLUP	&kp VOLDN	&kp VMUTE	&trans		&trans	&trans	&kp TAB	&kp CAPS	&kp COLON
+	&kp LCTRL	&kp LALT	&kp LMETA	&LSFT	&trans		&kp LEFT	&kp DOWN	&kp UP	&kp RIGHT	&kp ESC
+	&trans	&kp BRIUP	&kp BRIDN	&trans	&trans		&trans	&kp PG_DN	&kp PG_UP	&kp PG_UP	&kp END
+			&trans	&to BS_L	&trans		&trans	&fun	&trans
+            >;
+        };
+
+        function_layer {
+            bindings = <
+	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI
+	&lc F1	&la F2	&lm F3	&ls F4	&kp F5		&kp F6	&rs F7	&rm F8	&ra F9	&rc F10
+	&kp F11	&kp F12	&kp F13	&kp F14	&kp F15		&kp F16	&kp F17	&kp F18	&kp F19	&kp F20
+			&trans	&to BS_L	&trans		&trans	&trans	&trans
+            >;
+        };
+   };
 };
