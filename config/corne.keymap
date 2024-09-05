@@ -135,55 +135,55 @@
 
         base_layer {
             bindings = <
-	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI
-	&lc A	&la R	&lm S	&ls T	&kp G		&kp M	&rs N	&rm E	&ra I	&rc O
-	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH
-	&lp NAV_L BSPC	&lp NUM_L SPACE	&to BS_L 		&to BS_L	&lp SYM_L RET	&to GAM_L
+	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
+	&none	&lc A	&la R	&lm S	&ls T	&kp G		&kp M	&rs N	&rm E	&ra I	&rc O	&none
+	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
+		&lp NAV_L BSPC	&lp NUM_L SPACE	&to BS_L 		&to BS_L	&lp SYM_L RET	&to GAM_L
             >;
         };
 
         num_layer {
             bindings = <
-	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI
-	&lc N1	&la N2	&lm N3	&ls N4	&kp N5		&kp N6	&rs N7	&rm N8	&ra N9	&rc N0
-	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH
-			&trans	&trans	&to BS_L		&to BS_L	&trans	&trans
+	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
+	&none	&lc N1	&la N2	&lm N3	&ls N4	&kp N5		&kp N6	&rs N7	&rm N8	&ra N9	&rc N0	&none
+	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
+				&trans	&trans	&to BS_L		&to BS_L	&trans	&trans
             >;
         };
 
         symbol_layer {
             bindings = <
-	&kp SQT	&kp LT 	&kp GT	&kp DQT	&trans		&kp DLLR	&kp UNDER	&kp LBKT	&kp RBKT	&kp PRCNT
-	&lc EXCL	&la MINUS	&lm PLUS	&ls EQUAL	&kp POUND		&kp AMPS	&rs COLON	&rm LPAR	&ra RPAR	&rc QMARK
-	&kp CARET	&kp FSLH	&kp STAR	&kp D	&kp GRAVE		&kp PIPE	&kp TILDE	&kp LBRC	&kp RBRC	&kp AT
-			&trans	&trans	&to BS_L		&to BS_L	&trans	&trans
+	&none	&kp SQT	&kp LT 	&kp GT	&kp DQT	&trans		&kp DLLR	&kp UNDER	&kp LBKT	&kp RBKT	&kp PRCNT	&none
+	&none	&lc EXCL	&la MINUS	&lm PLUS	&ls EQUAL	&kp POUND		&kp AMPS	&rs COLON	&rm LPAR	&ra RPAR	&rc QMARK	&none
+	&none	&kp CARET	&kp FSLH	&kp STAR	&kp D	&kp GRAVE		&kp PIPE	&kp TILDE	&kp LBRC	&kp RBRC	&kp AT	&none
+				&trans	&trans	&to BS_L		&to BS_L	&trans	&trans
             >;
         };
 
         nav_layer {
             bindings = <
-	&trans	&kp VOLUP	&kp VOLDN	&kp VMUTE	&trans		&trans	&trans	&kp TAB	&kp CAPS	&kp COLON
-	&kp LCTRL	&kp LALT	&kp LMETA	&kp LSFT	&trans		&kp LEFT	&kp DOWN	&kp UP	&kp RIGHT	&kp ESC
-	&trans	&kp BRIUP	&kp BRIDN	&trans	&trans		&trans	&kp PG_DN	&kp PG_UP	&kp PG_UP	&kp END
-			&trans	&trans	&trans		&trans	&trans	&trans
+	&none	&trans	&kp VOLUP	&kp VOLDN	&kp VMUTE	&trans		&trans	&trans	&kp TAB	&kp CAPS	&kp COLON	&none
+	&none	&kp LCTRL	&kp LALT	&kp LMETA	&kp LSFT	&trans		&kp LEFT	&kp DOWN	&kp UP	&kp RIGHT	&kp ESC	&none
+	&none	&trans	&kp BRIUP	&kp BRIDN	&trans	&trans		&trans	&kp PG_DN	&kp PG_UP	&kp PG_UP	&kp END	&none
+				&trans	&trans	&trans		&trans	&trans	&trans
             >;
         };
 
         function_layer {
             bindings = <
-	&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
-	&lc F1	&la F2	&lm F3	&ls F4	&kp F5		&kp F6	&rs F7	&rm F8	&ra F9	&rc F10
-	&kp F11	&kp F12	&kp F13	&kp F14	&kp F15		&kp F16	&kp F17	&kp F18	&kp F19	&kp F20
-			&trans	&to BS_L	&trans		&trans	&trans	&trans
+	&none	&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans	&none
+	&none	&lc F1	&la F2	&lm F3	&ls F4	&kp F5		&kp F6	&rs F7	&rm F8	&ra F9	&rc F10	&none
+	&none	&kp F11	&kp F12	&kp F13	&kp F14	&kp F15		&kp F16	&kp F17	&kp F18	&kp F19	&kp F20	&none
+				&trans	&to BS_L	&trans		&trans	&trans	&trans
             >;
         };
 
         gaming_layer {
             bindings = <
-	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI
-	&kp A	&kp R	&kp S	&kp T	&kp G		&kp M	&kp N	&kp E	&kp I	&kp O
-	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH
-			&kp LCTRL	&kp SPACE	&kp LALT 		&none	&lp SYM_L RET	&to BS_L
+	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
+	&none	&kp A	&kp R	&kp S	&kp T	&kp G		&kp M	&kp N	&kp E	&kp I	&kp O	&none
+	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
+				&kp LCTRL	&kp SPACE	&kp LALT 		&none	&lp SYM_L RET	&to BS_L
             >;
         };
    };
