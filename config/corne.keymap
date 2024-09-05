@@ -136,7 +136,7 @@
         base_layer {
             bindings = <
 	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
-	&none	&hrm LCTL A	&la R	&lm S	&ls T	&kp G		&kp M	&rs N	&rm E	&ra I	&rc O	&none
+	&none	&hrm LCTL A	&hrm LALT R	&hrm LMET S	&hrm LSFT T	&kp G		&kp M	&hrm RSFT N	&hrm RMET E	&hrm RALT I	&hrm RCTL O	&none
 	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
 		&lp NUM_L SPACE	&lp NAV_L BSPC	&to BS_L 		&to BS_L	&to GAM_L		&lp SYM_L RET
             >;
@@ -145,7 +145,7 @@
         num_layer {
             bindings = <
 	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
-	&none	&lc N1	&la N2	&lm N3	&ls N4	&kp N5		&kp N6	&rs N7	&rm N8	&ra N9	&rc N0	&none
+	&none	&hrm LCTL N1	&hrm LALT N2	&hrm LMET N3	&hrm LSFT N4	&kp N5		&kp N6	&hrm RSFT N7	&hrm RMET N8	&hrm RALT N9	&hrm RCTL N0	&none
 	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
 				&trans	&trans	&to BS_L		&to BS_L	&trans	&trans
             >;
@@ -154,7 +154,7 @@
         symbol_layer {
             bindings = <
 	&none	&kp SQT	&kp LT 	&kp GT	&kp DQT	&trans		&kp DLLR	&kp UNDER	&kp LBKT	&kp RBKT	&kp PRCNT	&none
-	&none	&lc EXCL	&la MINUS	&lm PLUS	&ls EQUAL	&kp POUND		&kp AMPS	&rs COLON	&rm LPAR	&ra RPAR	&rc QMARK	&none
+	&none	&hrm LCTL EXCL	&hrm LALT MINUS	&hrm LMET PLUS	&hrm LSFT EQUAL	&kp POUND		&kp AMPS	&hrm RSFT COLON	&hrm RMET LPAR	&hrm RALT RPAR	&hrm RCTL QMARK	&none
 	&none	&kp CARET	&kp FSLH	&kp STAR	&kp D	&kp GRAVE		&kp PIPE	&kp TILDE	&kp LBRC	&kp RBRC	&kp AT	&none
 				&trans	&trans	&to BS_L		&to BS_L	&trans	&trans
             >;
@@ -172,7 +172,7 @@
         function_layer {
             bindings = <
 	&none	&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans	&none
-	&none	&lc F1	&la F2	&lm F3	&ls F4	&kp F5		&kp F6	&rs F7	&rm F8	&ra F9	&rc F10	&none
+	&none	&hrm LCTL F1	&hrm LALT F2	&hrm LMET F3	&hrm LSFT F4	&kp F5		&kp F6	&hrm RSFT F7	&hrm RMET F8	&hrm RALT F9	&hrm RCTL F10	&none
 	&none	&kp F11	&kp F12	&kp F13	&kp F14	&kp F15		&kp F16	&kp F17	&kp F18	&kp F19	&kp F20	&none
 				&trans	&to BS_L	&trans		&trans	&trans	&trans
             >;
