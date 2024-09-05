@@ -136,7 +136,7 @@
         base_layer {
             bindings = <
 	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
-	&none	&hrm LCTL a	&la R	&lm S	&ls T	&kp G		&kp M	&rs N	&rm E	&ra I	&rc O	&none
+	&none	&hrm LCTL A	&la R	&lm S	&ls T	&kp G		&kp M	&rs N	&rm E	&ra I	&rc O	&none
 	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
 		&lp NUM_L SPACE	&lp NAV_L BSPC	&to BS_L 		&to BS_L	&to GAM_L		&lp SYM_L RET
             >;
