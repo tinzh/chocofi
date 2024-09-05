@@ -5,10 +5,10 @@
 #define MACRO_PLACEHOLDER 0
 
 // variables
-#define HOLD_MS       1000 // time after which hold action is activated
-#define QUICK_TAP_MS  150 // time between double-taps that always triggers tap behavior
-#define PRIOR_IDLE_MS 100 // time since last non-modifier that disables modifiers
-#define TAP_DANCE_MS  1000 // max time between tap-dance taps
+#define HOLD_MS       1000  // time after which hold action is activated
+#define QUICK_TAP_MS  150   // time between double-taps that always triggers tap behavior
+#define PRIOR_IDLE_MS 100   // time since last non-modifier that disables modifiers
+#define TAP_DANCE_MS  1000  // max time between tap-dance taps
 
 // layers
 #define BS_L  0
@@ -16,6 +16,7 @@
 #define SYM_L 2
 #define NAV_L 3
 #define FUN_L 4
+#define GAM_L 5
 
 // redefines
 #define BRIUP C_BRI_UP
@@ -70,6 +71,16 @@
             quick-tap-ms = <QUICK_TAP_MS>;
             require-prior-idle-ms = <PRIOR_IDLE_MS>;
             bindings = <&kp>, <&kp>;
+        };
+
+        lp: layer_key_press {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <HOLD_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <PRIOR_IDLE_MS>;
+            bindings = <&mo>, <&kp>;
         };
     };
 
@@ -127,7 +138,7 @@
 	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI
 	&lc A	&la R	&lm S	&ls T	&kp G		&kp M	&rs N	&rm E	&ra I	&rc O
 	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH
-			&kp BSPC	&kp SPACE	&nav 		&kp RET	&sym	&num
+	&lp NAV_L BSPC	&lp NUM_L SPACE	&to BS_L 		&to BS_L	&lp SYM_L RET	&to GAM_L
             >;
         };
 
@@ -136,7 +147,7 @@
 	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI
 	&lc N1	&la N2	&lm N3	&ls N4	&kp N5		&kp N6	&rs N7	&rm N8	&ra N9	&rc N0
 	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH
-			&trans	&to BS_L	&trans		&trans	&trans	&trans
+			&trans	&trans	&to BS_L		&to BS_L	&trans	&trans
             >;
         };
 
@@ -145,7 +156,7 @@
 	&kp SQT	&kp LT 	&kp GT	&kp DQT	&trans		&kp DLLR	&kp UNDER	&kp LBKT	&kp RBKT	&kp PRCNT
 	&lc EXCL	&la MINUS	&lm PLUS	&ls EQUAL	&kp POUND		&kp AMPS	&rs COLON	&rm LPAR	&ra RPAR	&rc QMARK
 	&kp CARET	&kp FSLH	&kp STAR	&kp D	&kp GRAVE		&kp PIPE	&kp TILDE	&kp LBRC	&kp RBRC	&kp AT
-			&trans	&to BS_L	&trans		&trans	&trans	&trans
+			&trans	&trans	&to BS_L		&to BS_L	&trans	&trans
             >;
         };
 
@@ -154,16 +165,25 @@
 	&trans	&kp VOLUP	&kp VOLDN	&kp VMUTE	&trans		&trans	&trans	&kp TAB	&kp CAPS	&kp COLON
 	&kp LCTRL	&kp LALT	&kp LMETA	&kp LSFT	&trans		&kp LEFT	&kp DOWN	&kp UP	&kp RIGHT	&kp ESC
 	&trans	&kp BRIUP	&kp BRIDN	&trans	&trans		&trans	&kp PG_DN	&kp PG_UP	&kp PG_UP	&kp END
-			&trans	&to BS_L	&trans		&trans	&fun	&trans
+			&trans	&trans	&trans		&trans	&trans	&trans
             >;
         };
 
         function_layer {
             bindings = <
-	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI
+	&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
 	&lc F1	&la F2	&lm F3	&ls F4	&kp F5		&kp F6	&rs F7	&rm F8	&ra F9	&rc F10
 	&kp F11	&kp F12	&kp F13	&kp F14	&kp F15		&kp F16	&kp F17	&kp F18	&kp F19	&kp F20
 			&trans	&to BS_L	&trans		&trans	&trans	&trans
+            >;
+        };
+
+        gaming_layer {
+            bindings = <
+	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI
+	&kp A	&kp R	&kp S	&kp T	&kp G		&kp M	&kp N	&kp E	&kp I	&kp O
+	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH
+			&kp LCTRL	&kp SPACE	&kp LALT 		&none	&lp SYM_L RET	&to BS_L
             >;
         };
    };
