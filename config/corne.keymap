@@ -155,7 +155,7 @@
             bindings = <
 	&none	&kp SQT	&kp LT 	&kp GT	&kp DQT	&trans		&kp DLLR	&kp UNDER	&kp LBKT	&kp RBKT	&kp PRCNT	&none
 	&none	&hrm LCTRL EXCL	&hrm LALT MINUS	&hrm LMETA PLUS	&hrm LSHFT EQUAL	&kp POUND		&kp AMPS	&hrm RSHFT COLON	&hrm RMETA LPAR	&hrm RALT RPAR	&hrm RCTRL QMARK	&none
-	&none	&kp CARET	&kp FSLH	&kp STAR	&kp D	&kp GRAVE		&kp PIPE	&kp TILDE	&kp LBRC	&kp RBRC	&kp AT	&none
+	&none	&kp CARET	&kp FSLH	&kp STAR	&kp BSLH	&kp GRAVE		&kp PIPE	&kp TILDE	&kp LBRC	&kp RBRC	&kp AT	&none
 				&trans	&trans	&to BS_L		&to BS_L	&trans	&trans
             >;
         };
@@ -168,6 +168,7 @@
 				&trans	&trans	&trans		&trans	&trans	&trans
             >;
         };
+
 
         function_layer {
             bindings = <
