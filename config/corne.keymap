@@ -138,7 +138,7 @@
 	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
 	&none	&hrm LCTRL A	&hrm LALT R	&hrm LMETA S	&hrm LSHFT T	&kp G		&kp M	&hrm RSHFT N	&hrm RMETA E	&hrm RALT I	&hrm RCTRL O	&none
 	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
-				&lp NAV_L BSPC	&lp NUM_L SPACE	&to BS_L 		&to GAM_L	&to BS_L	&lp SYM_L RET
+				&lp NAV_L BSPC	&lp NUM_L SPACE	&to BS_L 		&to BS_L	&to BS_L	&lp SYM_L RET
             >;
         };
 
@@ -147,7 +147,7 @@
 	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
 	&none	&hrm LCTRL N1	&hrm LALT N2	&hrm LMETA N3	&hrm LSHFT N4	&kp N5		&kp N6	&hrm RSHFT N7	&hrm RMETA N8	&hrm RALT N9	&hrm RCTRL N0	&none
 	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
-				&trans	&trans	&to BS_L		&to BS_L	&trans	&trans
+				&trans	&trans	&to BS_L		&trans	&trans	&trans
             >;
         };
 
@@ -156,7 +156,7 @@
 	&none	&kp SQT	&kp LT 	&kp GT	&kp DQT	&trans		&kp DLLR	&kp UNDER	&kp LBKT	&kp RBKT	&kp PRCNT	&none
 	&none	&hrm LCTRL EXCL	&hrm LALT MINUS	&hrm LMETA PLUS	&hrm LSHFT EQUAL	&kp POUND		&kp AMPS	&hrm RSHFT COLON	&hrm RMETA LPAR	&hrm RALT RPAR	&hrm RCTRL QMARK	&none
 	&none	&kp CARET	&kp FSLH	&kp STAR	&kp BSLH	&kp GRAVE		&kp PIPE	&kp TILDE	&kp LBRC	&kp RBRC	&kp AT	&none
-				&trans	&trans	&to BS_L		&to BS_L	&trans	&trans
+				&trans	&trans	&to BS_L		&trans	&trans	&trans
             >;
         };
 
