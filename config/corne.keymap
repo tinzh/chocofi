@@ -6,8 +6,8 @@
 
 // variables
 #define HOLD_MS       1000  // time after which hold action is activated
-#define QUICK_TAP_MS  300   // time between double-taps that always triggers tap behavior
-#define PRIOR_IDLE_MS 0     // time since last non-modifier that disables modifiers
+#define QUICK_TAP_MS  301   // time between double-taps that always triggers tap behavior
+#define PRIOR_IDLE_MS -1    // time since last non-modifier that disables modifiers
 #define TAP_DANCE_MS  1000  // max time between tap-dance taps
 
 // layers
