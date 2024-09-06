@@ -138,7 +138,7 @@
 	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
 	&none	&hrm LCTRL A	&hrm LALT R	&hrm LMETA S	&hrm LSHFT T	&kp G		&kp M	&hrm RSHFT N	&hrm RMETA E	&hrm RALT I	&hrm RCTRL O	&none
 	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
-				&lp NAV_L BSPC	&lp NUM_L SPACE	&to BS_L 		&to BS_L	&to BS_L	&lp SYM_L RET
+				&lp NAV_L BSPC	&lp NUM_L SPACE	&to BS_L 		&key_repeat	&to BS_L	&lp SYM_L RET
             >;
         };
 
