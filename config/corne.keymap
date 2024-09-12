@@ -174,7 +174,7 @@
 
         function_layer {
             bindings = <
-	&none	&bt BT_SEL 1	&bt BT_SEL 2	&bt BT_SEL 3	&bt BT_SEL 4	&bt BT_CLR		&trans	&out OUT_USB	&out OUT_BLE	&ext_power EP_ON	&ext_power EP_OFF	&none
+	&none	&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2	&bt BT_SEL 3	&bt BT_CLR		&trans	&out OUT_USB	&out OUT_BLE	&ext_power EP_ON	&ext_power EP_OFF	&none
 	&none	&hrm LCTRL F1	&hrm LALT F2	&hrm LMETA F3	&hrm LSHFT F4	&kp F5		&kp F6	&hrm RSHFT F7	&hrm RMETA F8	&hrm RALT F9	&hrm RCTRL F10	&none
 	&none	&kp F11	&kp F12	&kp F13	&kp F14	&kp F15		&kp F16	&kp F17	&kp F18	&kp F19	&kp F20	&none
 				&trans	&trans	&trans		&trans	&trans	&trans
