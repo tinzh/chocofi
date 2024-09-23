@@ -17,7 +17,7 @@
 #define NUM_L 1
 #define SYM_L 2
 #define NAV_L 3
-#define FUN_L 4
+#define MED_L 4
 #define GAM_L 5
 
 // redefines
@@ -62,7 +62,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <TAP_DANCE_MS>;
-            bindings = <&layer_sticky FUN_L FUN_L>, <&to FUN_L>;
+            bindings = <&layer_sticky MED_L MED_L>, <&to MED_L>;
         };
 
         hrm: home_row_mod {
@@ -131,7 +131,7 @@
 
 
     keymap {
-        // view with tabstop=18 (?)
+        // view with tabstop=18
 
         compatible = "zmk,keymap";
 
@@ -141,16 +141,16 @@
 	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
 	&none	&hrm LCTRL A	&hrm LALT R	&hrm LMETA S	&hrm LSHFT T	&kp G		&kp M	&hrm RSHFT N	&hrm RMETA E	&hrm RALT I	&hrm RCTRL O	&none
 	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
-				&lp NAV_L BSPC	&lp NUM_L SPACE	&mo FUN_L 		&to BS_L	&key_repeat	&lp SYM_L RET
+				&lp NAV_L BSPC	&lp NUM_L SPACE	&mo MED_L 		&to BS_L	&key_repeat	&lp SYM_L RET
             >;
         };
 
         num_layer {
             display-name = "num";
             bindings = <
-	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
+	&none	&kp F1	&kp F2	&kp F3	&kp F4	&kp F5		&kp F6	&kp F7	&kp F8	&kp F9	&kp F10	&none
 	&none	&hrm LCTRL N1	&hrm LALT N2	&hrm LMETA N3	&hrm LSHFT N4	&kp N5		&kp N6	&hrm RSHFT N7	&hrm RMETA N8	&hrm RALT N9	&hrm RCTRL N0	&none
-	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
+	&none	&kp F11	&kp F12	&kp F13	&kp F14	&kp F15		&kp F16	&kp F17	&kp F18	&kp F19	&kp F20	&none
 				&trans	&trans	&trans		&trans	&trans	&trans
             >;
         };
@@ -158,30 +158,30 @@
         symbol_layer {
             display-name = "sym";
             bindings = <
-	&none	&kp SQT	&kp LT 	&kp GT	&kp DQT	&trans		&kp DLLR	&kp UNDER	&kp LBKT	&kp RBKT	&kp PRCNT	&none
+	&none	&kp SQT	&kp LT 	&kp GT	&kp DQT	&none		&kp DLLR	&kp UNDER	&kp LBKT	&kp RBKT	&kp PRCNT	&none
 	&none	&hrm LCTRL EXCL	&hrm LALT MINUS	&hrm LMETA PLUS	&hrm LSHFT EQUAL	&kp POUND		&kp AMPS	&hrm RSHFT COLON	&hrm RMETA LPAR	&hrm RALT RPAR	&hrm RCTRL QMARK	&none
 	&none	&kp CARET	&kp FSLH	&kp STAR	&kp BSLH	&kp GRAVE		&kp PIPE	&kp TILDE	&kp LBRC	&kp RBRC	&kp AT	&none
-				&trans	&trans	&trans		&trans	&trans	&trans
+				&kp DEL	&trans	&trans		&trans	&trans	&trans
             >;
         };
 
         nav_layer {
             display-name = "nav";
             bindings = <
-	&none	&trans	&kp VOLDN	&kp VOLUP	&kp VMUTE	&trans		&trans	&trans	&kp TAB	&kp CAPS	&kp DEL	&none
-	&none	&kp LCTRL	&kp LALT	&kp LMETA	&kp LSHFT	&trans		&kp LEFT	&kp DOWN	&kp UP	&kp RIGHT	&kp ESC	&none
-	&none	&trans	&kp BRIDN	&kp BRIUP	&trans	&trans		&trans	&kp PG_DN	&kp PG_UP	&kp PG_UP	&kp END	&none
+	&none	&none	&kp VOLDN	&kp VOLUP	&kp VMUTE	&none		&none	&none	&kp TAB	&kp CAPS	&kp HOME	&none
+	&none	&kp LCTRL	&kp LALT	&kp LMETA	&kp LSHFT	&none		&kp LEFT	&kp DOWN	&kp UP	&kp RIGHT	&kp ESC	&none
+	&none	&none	&kp BRIDN	&kp BRIUP	&none	&none		&none	&none	&kp PG_DN	&kp PG_UP	&kp END	&none
 				&trans	&trans	&trans		&trans	&trans	&trans
             >;
         };
 
 
-        function_layer {
-            display-name = "func";
+        media_layer {
+            display-name = "media";
             bindings = <
-	&none	&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2	&bt BT_SEL 3	&bt BT_CLR		&trans	&out OUT_USB	&out OUT_BLE	&ext_power EP_ON	&ext_power EP_OFF	&none
-	&none	&hrm LCTRL F1	&hrm LALT F2	&hrm LMETA F3	&hrm LSHFT F4	&kp F5		&kp F6	&hrm RSHFT F7	&hrm RMETA F8	&hrm RALT F9	&hrm RCTRL F10	&none
-	&none	&kp F11	&kp F12	&kp F13	&kp F14	&kp F15		&kp F16	&kp F17	&kp F18	&kp F19	&kp F20	&none
+	&none	&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2	&bt BT_SEL 3	&bt BT_SEL 4		&bt BT_CLR	&out OUT_BLE	&out OUT_USB	&ext_power EP_ON	&ext_power EP_OFF	&none
+	&none	&none	&kp C_PREV	&kp C_NEXT	&kp C_PP	&none		&none	&none	&kp BRIDN	&kp BRIUP	&none	&none
+	&none	&none	&kp VOLDN	&kp VOLUP	&kp VMUTE	&none		&none	&none	&kp C_SLEEP	&kp C_PWR	&none	&none
 				&trans	&trans	&trans		&to GAM_L	&trans	&trans
             >;
         };
