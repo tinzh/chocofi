@@ -141,7 +141,7 @@
 	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
 	&none	&hrm LCTRL A	&hrm LALT R	&hrm LMETA S	&hrm LSHFT T	&kp G		&kp M	&hrm RSHFT N	&hrm RMETA E	&hrm RALT I	&hrm RCTRL O	&none
 	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
-				&lp NAV_L BSPC	&lp NUM_L SPACE	&mo MED_L 		&to BS_L	&key_repeat	&lp SYM_L RET
+				&mo MED_L 	&lp NAV_L BSPC	&lp NUM_L SPACE		&key_repeat	&lp SYM_L RET	&to BS_L
             >;
         };
 
@@ -161,7 +161,7 @@
 	&none	&kp SQT	&kp LT 	&kp GT	&kp DQT	&none		&kp DLLR	&kp UNDER	&kp LBKT	&kp RBKT	&kp PRCNT	&none
 	&none	&hrm LCTRL EXCL	&hrm LALT MINUS	&hrm LMETA PLUS	&hrm LSHFT EQUAL	&kp POUND		&kp AMPS	&hrm RSHFT COLON	&hrm RMETA LPAR	&hrm RALT RPAR	&hrm RCTRL QMARK	&none
 	&none	&kp CARET	&kp FSLH	&kp STAR	&kp BSLH	&kp GRAVE		&kp PIPE	&kp TILDE	&kp LBRC	&kp RBRC	&kp AT	&none
-				&kp DEL	&trans	&trans		&trans	&trans	&trans
+				&trans	&kp DEL	&trans		&trans	&trans	&trans
             >;
         };
 
@@ -182,7 +182,7 @@
 	&none	&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2	&bt BT_SEL 3	&bt BT_SEL 4		&bt BT_CLR	&out OUT_BLE	&out OUT_USB	&ext_power EP_ON	&ext_power EP_OFF	&none
 	&none	&none	&kp C_PREV	&kp C_NEXT	&kp C_PP	&none		&none	&none	&kp BRIDN	&kp BRIUP	&none	&none
 	&none	&none	&kp VOLDN	&kp VOLUP	&kp VMUTE	&none		&none	&none	&kp C_SLEEP	&kp C_PWR	&none	&none
-				&trans	&trans	&trans		&to GAM_L	&trans	&trans
+				&trans	&trans	&trans		&trans	&trans	&to GAM_L
             >;
         };
 
@@ -192,7 +192,7 @@
 	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
 	&none	&kp A	&kp R	&kp S	&kp T	&kp G		&kp M	&kp N	&kp E	&kp I	&kp O	&none
 	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
-				&kp LSHFT	&kp SPACE	&kp LALT 		&to BS_L	&to BS_L	&lp SYM_L RET
+				&kp LALT 	&kp LSHFT	&kp SPACE		&to BS_L	&lp SYM_L RET	&to BS_L
             >;
         };
    };
