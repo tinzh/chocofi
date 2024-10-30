@@ -161,7 +161,7 @@
 	&none	&kp SQT	&kp LT 	&kp GT	&kp DQT	&none		&kp DLLR	&kp UNDER	&kp LBKT	&kp RBKT	&kp PRCNT	&none
 	&none	&hrm LCTRL EXCL	&hrm LALT MINUS	&hrm LMETA PLUS	&hrm LSHFT EQUAL	&kp POUND		&kp AMPS	&hrm RSHFT COLON	&hrm RMETA LPAR	&hrm RALT RPAR	&hrm RCTRL QMARK	&none
 	&none	&kp CARET	&kp FSLH	&kp STAR	&kp BSLH	&kp GRAVE		&kp PIPE	&kp TILDE	&kp LBRC	&kp RBRC	&kp AT	&none
-				&kp DEL	&trans	&trans		&trans	&trans	&trans
+				&lp NAV_L DEL	&trans	&trans		&trans	&trans	&trans
             >;
         };
 
