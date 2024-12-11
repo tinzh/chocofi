@@ -8,8 +8,6 @@
 
 // variables
 #define HOLD_MS       1000  // time after which hold action is activated
-#define QUICK_TAP_MS  301   // time between double-taps that always triggers tap behavior
-#define PRIOR_IDLE_MS -1    // time since last non-modifier that disables modifiers
 #define TAP_DANCE_MS  1000  // max time between tap-dance taps
 
 // layers
@@ -70,8 +68,6 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <HOLD_MS>;
-            // quick-tap-ms = <QUICK_TAP_MS>;
-            // require-prior-idle-ms = <PRIOR_IDLE_MS>;
             bindings = <&kp>, <&kp>;
         };
 
@@ -80,9 +76,23 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <HOLD_MS>;
-            // quick-tap-ms = <QUICK_TAP_MS>;
-            // require-prior-idle-ms = <PRIOR_IDLE_MS>;
             bindings = <&mo>, <&kp>;
+        };
+
+        ll: layer_layer_press {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <HOLD_MS>;
+            bindings = <&mo>, <&to>;
+        };
+
+        sht: shift_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <HOLD_MS>;
+            bindings = <&kp>, <&key_repeat>;
         };
     };
 
@@ -129,7 +139,6 @@
         };
     };
 
-
     keymap {
         // view with tabstop=18
 
@@ -141,7 +150,7 @@
 	&none	&kp Q	&kp W	&kp F	&kp P	&kp B		&kp J	&kp L	&kp U	&kp Y	&kp SEMI	&none
 	&none	&hrm LCTRL A	&hrm LALT R	&hrm LMETA S	&hrm LSHFT T	&kp G		&kp M	&hrm RSHFT N	&hrm RMETA E	&hrm RALT I	&hrm RCTRL O	&none
 	&none	&kp Z	&kp X	&kp C	&kp D	&kp V		&kp K	&kp H	&kp COMMA	&kp DOT	&kp FSLH	&none
-				&mo MED_L 	&lp NUM_L SPACE	&lp NAV_L BSPC		&lp SYM_L RET	&key_repeat	&to BS_L
+				&ll MED_L BS_L 	&lp NUM_L SPACE	&lp NAV_L BSPC		&lp SYM_L RET	&sht LSHFT 0	&key_repeat
             >;
         };
 
